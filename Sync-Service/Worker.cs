@@ -14,13 +14,11 @@ public class Worker : BackgroundService
     public Worker(ILogger<Worker> logger)
     {
         _logger = logger;
-   
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         var azureUserList = new List<User>();
-        var existingDirectUserList = new List<Employee>();
         
         while (!stoppingToken.IsCancellationRequested)
         {
@@ -62,10 +60,17 @@ public class Worker : BackgroundService
                 }
 
                 if (azureUserList != null)
+                {
                     foreach (var user in azureUserList)
                     {
-
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("UserId: " + user.id);
+                        Console.WriteLine("UserPrincipalName: " + user.userPrincipalName);
+                        Console.ForegroundColor = ConsoleColor.Blue;  
+                        Console.WriteLine("");
+                        Console.ResetColor();
                     }
+                }
             }
 
             _logger.LogInformation("Worker running at: {Time}", DateTimeOffset.Now);
