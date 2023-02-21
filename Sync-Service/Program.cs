@@ -1,6 +1,4 @@
 using Azure_Sync_Service;
-using Dal.Direct.Context;
-using Microsoft.EntityFrameworkCore;
 
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
