@@ -1,9 +1,7 @@
-using Dal.Direct.Context;
-using Dal.Direct.Models;
 using Microsoft.Identity.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Employee = Dal.Direct.Models.Employee;
+
 
 namespace Azure_Sync_Service;
 
@@ -20,7 +18,6 @@ public class Worker : BackgroundService
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         var azureUserList = new List<User>();
-        var existingDirectUserList = new List<Employee>();
         
         while (!stoppingToken.IsCancellationRequested)
         {
