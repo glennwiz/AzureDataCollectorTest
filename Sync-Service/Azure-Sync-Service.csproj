@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.7.0" />
-    <PackageReference Include="Dal.Direct" Version="1.0.5-beta" />
     <PackageReference Include="Microsoft.Azure.ActiveDirectory.GraphClient" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Microsoft.Graph" Version="4.46.0" />
